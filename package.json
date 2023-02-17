@@ -4,8 +4,7 @@
   "description": "Buy first and pay later",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon ./backend/server.js",
-    "dev" :"nodemon ./backend/server.js"
+    "start": "nodemon ./backend/server.js"
   },
   "author": "vithusan",
   "license": "ISC",

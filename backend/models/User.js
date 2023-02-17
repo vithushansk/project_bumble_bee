@@ -1,7 +1,7 @@
 const {DataTypes} = require('sequelize');
 const sequelize = require('../configuration/db');
 
-const User = sequelize.define('User',{
+const User = sequelize.define('user',{
     id:{
         type:DataTypes.BIGINT,
         autoIncrement:true,
@@ -10,12 +10,12 @@ const User = sequelize.define('User',{
 
     firstname:{
         type:DataTypes.TEXT,
-        allowNull:false,
+        allowNull:false
     },
 
     lastname:{
         type:DataTypes.TEXT,
-        allowNull:false,
+        allowNull:false
     },
 
     username:{
@@ -26,13 +26,20 @@ const User = sequelize.define('User',{
 
     password:{
         type:DataTypes.TEXT,
-        allowNull:false,
+        allowNull:false
     },
 
     dateOfBirth:{
-        type:DataTypes.DATE,
-        allowNull:false,
+        type:DataTypes.DATEONLY,
+        allowNull:false 
     },
 },{});
 
 module.exports = User;
+
+
+sequelize.sync().then(()=>{
+    console.log("User table created...!");
+}).catch((error)=>{
+    console.log(error);
+})
